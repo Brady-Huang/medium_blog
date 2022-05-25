@@ -10,9 +10,11 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = [ "content" ]
 
-  connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
+  pushme() {
+    let content = this.contentTarget.value;
+    console.log(content);
   }
+ 
 }

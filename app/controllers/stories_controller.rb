@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
     before_action :authenticate_user!
     before_action :find_story, only: [:edit, :update, :destroy]
     def index
-      @stories = current_user.stories.order(created_at: :desc)
+      @stories = current_user.stories.where(deleted_at: nil).order(created_at: :desc)
     end
 
     def new
@@ -13,7 +13,7 @@ class StoriesController < ApplicationController
       @story = current_user.stories.new(story_params)
 
       if @story.save
-        redirect_to stories_path, notice: '文章新增成功'
+        redirect_to stories_path, notice: '故事新增成功'
       else
         render :new
       end
@@ -25,10 +25,15 @@ class StoriesController < ApplicationController
     def update
       
       if @story.update(story_params)
-        redirect_to stories_path, notice: '文章更新成功'
+        redirect_to stories_path, notice: '故事更新成功'
       else
         render :edit
       end
+    end
+
+    def destroy
+      @story.destroy
+      redirect_to stories_path, notice: '故事刪除成功'
     end
     private 
     def find_story

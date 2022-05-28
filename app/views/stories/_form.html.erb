@@ -1,3 +1,9 @@
+<% if story.errors.any? %>
+  <div class="notification is-danger">
+    <%= story.errors.full_messages.to_sentence %>
+  </div>
+<% end %>
+
 <%= form_for(story) do |form| %>
   <div class="field">
     <%= form.label :title, '標題' %>

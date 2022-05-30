@@ -3,7 +3,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root 'pages#index'
-  get "/demo", to: 'pages#demo'
+  # /@bradyhuang/article-title-123
+  get '@:username/:story_id', to: 'pages#show', as: 'story_page'
+  # /@bradyhuang
+  get '@:username', to: 'pages#user', as: 'user_page'
 
   resources :stories
 

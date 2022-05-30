@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :find_story, only: [:show]
   def index
     # @stories = Story.order(created_at: :desc)
     # N + 1 problem
@@ -10,10 +11,16 @@ class PagesController < ApplicationController
 
     # using scope
     @stories = Story.published_stories
-    
+
   end
   def show
+    
   end
   def user
+  end
+
+  private 
+  def find_story
+    @story = Story.find(params[:story_id])
   end
 end

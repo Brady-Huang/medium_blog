@@ -1,4 +1,6 @@
 class Story < ApplicationRecord
+  acts_as_paranoid
+
   extend FriendlyId
   friendly_id :slug_candidate, use: [ :finders,:slugged ]
 
@@ -12,7 +14,8 @@ class Story < ApplicationRecord
   has_one_attached :cover_image
 
   # scopes
-  default_scope {where(deleted_at: nil)}
+  ########## comment it because paranoia
+  # default_scope {where(deleted_at: nil)}
   # scope :published_stories, -> {where(status: 'published')}
   scope :published_stories, -> {published.with_attached_cover_image.order(created_at: :desc).includes(:user)}
   ## instance method
@@ -29,10 +32,10 @@ class Story < ApplicationRecord
       transitions from: :published, to: :draft
     end
   end
-
-  def destroy
-    update(deleted_at: Time.now)
-  end
+  ####### comment it because paranoia
+  # def destroy
+  #   update(deleted_at: Time.now)
+  # end
 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :russian).to_s

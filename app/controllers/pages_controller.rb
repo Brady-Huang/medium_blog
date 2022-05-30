@@ -16,6 +16,7 @@ class PagesController < ApplicationController
   def show
     
   end
+  
   def user
   end
 

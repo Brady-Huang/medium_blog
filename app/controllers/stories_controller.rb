@@ -55,6 +55,6 @@ class StoriesController < ApplicationController
       @story = current_user.stories.find(params[:id])
     end
     def story_params
-      params.require(:story).permit(:title, :content)
+      params.require(:story).permit(:title, :content, :cover_image)
     end
 end

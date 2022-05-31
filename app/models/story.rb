@@ -2,7 +2,7 @@ class Story < ApplicationRecord
   acts_as_paranoid
 
   extend FriendlyId
-  friendly_id :slug_candidate, use: [ :finders,:slugged ]
+  friendly_id :slug_candidate, use: :slugged
 
   include AASM
   

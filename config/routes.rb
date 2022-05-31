@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+  resources :stories do 
+    resources :comments, only: [:create]
+  end
   root 'pages#index'
   # /@bradyhuang/article-title-123
   get '@:username/:story_id', to: 'pages#show', as: 'story_page'
   # /@bradyhuang
   get '@:username', to: 'pages#user', as: 'user_page'
-
-  resources :stories
 
 end

@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
     before_action :authenticate_user!
     before_action :find_story, only: [:edit, :update, :destroy]
+
     def index
       @stories = current_user.stories.where(deleted_at: nil).order(created_at: :desc)
     end
@@ -50,6 +51,7 @@ class StoriesController < ApplicationController
       @story.destroy
       redirect_to stories_path, notice: '故事刪除成功'
     end
+
     private 
     def find_story
       @story = current_user.stories.friendly.find(params[:id])

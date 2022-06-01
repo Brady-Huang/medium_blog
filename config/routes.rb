@@ -2,6 +2,25 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+
+  namespace :api do
+    namespace :v1 do
+
+      resources :users, only: [] do 
+        member do
+          post :follow
+        end
+      end
+
+      resources :stories, only: [] do 
+        member do
+          post :clap
+          
+        end
+      end
+    end
+  end
+  
   resources :stories do 
     resources :comments, only: [:create]
   end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
 
   namespace :api do
+    post :upload_image, to: 'utils#upload_image'
     namespace :v1 do
 
       resources :users, only: [] do 
@@ -21,6 +22,13 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :users, only: [] do
+    collection do
+      get :pricing   # /users/pricing
+      get :payment   # /users/payment
+      post :pay      # /users/pay
+    end
+  end
   resources :stories do 
     resources :comments, only: [:create]
   end

@@ -1,24 +1,10 @@
-# README
+# MEDIUM WEBSITE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is to create a website that has similar functions and layouts to renowned blogs -- MEDIUM.
 
-Things you may want to cover:
+## PLAY ROUND -- RUN ON localhost
+```
+git clone 
 
-* Ruby version
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

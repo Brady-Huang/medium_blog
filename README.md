@@ -2,7 +2,7 @@
 
 This project is to create a website that has similar functions and layouts to renowned blogs -- MEDIUM.
 
-## Play around -- run on localhost
+## Running On Local
 ```
 git clone https://github.com/Brady-Huang/medium_blog.git
 cd medium_blog

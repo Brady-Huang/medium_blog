@@ -17,6 +17,7 @@ module MediumBlogProject
       g.helper false
       g.test_framework false
     end
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

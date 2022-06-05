@@ -1,2 +1,2 @@
-web: bin/rails server -p 5000
-webpack: bin/webpack-dev-server
+web: rails server
+release: bundle exec rake db:migrate

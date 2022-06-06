@@ -1,4 +1,4 @@
-# Medium-Like Website
+# Medium Blog System
 
 This project is to create a website that has similar functions and layouts to renowned blogs -- MEDIUM.
 

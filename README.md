@@ -1,6 +1,6 @@
-# Medium Blog System
+# Medium Blog
 
-This project is to create a website that has similar functions and layouts to renowned blogs -- MEDIUM.
+This project is to create a website that has similar functions and layouts to a renowned blog -- MEDIUM.
 
 ## Running On Local
 ```
